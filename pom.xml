@@ -32,35 +32,6 @@
 		<junit.version>4.11</junit.version>
 
 	</properties>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<version>2.5</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.5</version>
-				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.eclipse.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>9.2.18.v20160721</version>
-				<configuration>
-					<scanIntervalSeconds>0</scanIntervalSeconds>
-					<webAppConfig>
-						<contextPath>/${project.artifactId}</contextPath>
-					</webAppConfig>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 	
 	<dependencies>
 	
@@ -133,5 +104,18 @@
 			<scope>test</scope>
 		</dependency>
 
-	</dependencies>	
+	<!-- begin maven jetty测试数据源支持 -->
+	<dependency>
+		<groupId>commons-dbcp</groupId>
+		<artifactId>commons-dbcp</artifactId>
+		<version>1.4</version>
+	</dependency>
+	<!-- end maven jetty测试数据源支持 -->
+
+	</dependencies>
+	<parent>
+		<groupId>com.allinpay.its</groupId>
+		<artifactId>its-parent</artifactId>
+		<version>2.0.2</version>
+	</parent>
 </project>
