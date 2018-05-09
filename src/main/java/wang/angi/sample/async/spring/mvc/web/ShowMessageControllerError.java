@@ -1,4 +1,4 @@
-package com.allinpay.sample.spring.mvc.web;
+package wang.angi.sample.async.spring.mvc.web;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
